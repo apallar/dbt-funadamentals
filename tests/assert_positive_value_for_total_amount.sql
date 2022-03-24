@@ -6,3 +6,5 @@ select
 from {{ ref('stg_payments') }}
 group by 1
 having not(total_amount >= 0)
+
+-- RUN as: dbt test -s assert_positive_value_for_total_amount
