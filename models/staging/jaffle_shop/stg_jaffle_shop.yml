@@ -22,3 +22,11 @@ models:
                 - return_pending
                 - returned
                 - placed
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+#Run as: dbt test -s stg_customers
+#Run as: dbt test -s stg_oders
